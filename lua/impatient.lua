@@ -283,7 +283,7 @@ local function loadfile_cached(path)
 
   if not err then
     log('Creating cache for path %s', path)
-    M.chunks.cache[modpath_mangle(path)] = {hash(path), string.dump(chunk)}
+    M.chunks.cache[modpath_mangle(path)] = {hash(path), string.dump(chunk, true)}
     M.chunks.dirty = true
   end
 
